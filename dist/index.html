@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+  <link rel="stylesheet" href="/output-ba0c29890e509e5c.css" integrity="sha384&#x2D;AvnGQwr&#x2F;uZLvSkE7ZJUmRWjDOy&#x2F;nRG9hEtGqR2bVaawq0NAcTWkyC&#x2F;MHktKc8a6h"/>
+  <title>MathLab + Yew</title>
+
+<link rel="modulepreload" href="/mathlab-yew-268b274cf522857b.js" crossorigin=anonymous integrity="sha384-gKFHsURTuKFlA37VMB+JER++3WYqg5rTVYGsMySGkFYoJURT+M1TzNw7H0oIJHbf">
+<link rel="preload" href="/mathlab-yew-268b274cf522857b_bg.wasm" crossorigin=anonymous integrity="sha384-SX3YxFhwz4VmMmGyw4P1C6eNdt6afcAI7MXY3UDZQ7lXmSxTbFhSfzJATtmAhWNh" as="fetch" type="application/wasm"></head>
+
+<body>
+
+
+<script type="module" nonce="mgfNwV7c02jc7XjvNfkeFw==">
+import init, * as bindings from '/mathlab-yew-268b274cf522857b.js';
+const wasm = await init('/mathlab-yew-268b274cf522857b_bg.wasm');
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+
+</html>
