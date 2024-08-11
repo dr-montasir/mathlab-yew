@@ -2,6 +2,10 @@ use chrono::Local;
 use mathlab::math;
 use yew::prelude::*;
 
+use yew_plotly::plotly::common::Mode;
+use yew_plotly::plotly::{Plot, Scatter};
+use yew_plotly::Plotly;
+
 pub fn get_year() -> String {
     let input = Local::now().to_string();
     let substring = input.split('-').next().unwrap_or("");
@@ -10,8 +14,20 @@ pub fn get_year() -> String {
 
 #[function_component]
 fn App() -> Html {
-    let range_asc = math::range(0.0, 15.0, 25, "asc");
-    let range_desc = math::range(360.0, 15.0, 25, "desc");
+    let range_asc = math::range(0.0, 5.0, 72 + 1, "asc");
+    let range_desc = math::range(360.0, 5.0, 72 + 1, "desc");
+
+    let mut plot = Plot::new();
+
+    let x_values: Vec<f64> = range_asc.clone();
+    let y_values = math::sin_deg_vec(&x_values);
+
+    let trace = Scatter::new(x_values, y_values)
+        .mode(Mode::LinesMarkersText)
+        .name("sin(x), x in degrees")
+        .show_legend(true);
+
+    plot.add_trace(trace);
 
     html! {
         <div>
@@ -67,6 +83,7 @@ fn App() -> Html {
                     })}
                     </tbody>
                     </table>
+                    <Plotly plot={plot}/>
                     <div class="w-full px-4 pt-5 mx-auto mb-8 "></div>
                 </div>
             </div>

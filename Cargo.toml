@@ -4,7 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-mathlab = "0.5.2"
+mathlab = "0.5.3"
 yew = { version="0.21.0", features = ["csr"]}
+yew-plotly = "0.3.0"
 wasm-bindgen = "0.2.92"
 chrono = "0.4.38"
