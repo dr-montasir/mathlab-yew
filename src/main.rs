@@ -14,8 +14,8 @@ pub fn get_year() -> String {
 
 #[function_component]
 fn App() -> Html {
-    let range_asc = math::range(0.0, 5.0, 72 + 1, "asc");
-    let range_desc = math::range(360.0, 5.0, 72 + 1, "desc");
+    let range_asc = math::range(-30.0, 15.0, 28 + 1, "asc");
+    let range_desc = math::range(390.0, 15.0, 28 + 1, "desc");
 
     let mut plot = Plot::new();
 
@@ -24,7 +24,7 @@ fn App() -> Html {
 
     let trace = Scatter::new(x_values, y_values)
         .mode(Mode::LinesMarkersText)
-        .name("sin(x), x in degrees")
+        .name("sin(x°)")
         .show_legend(true);
 
     plot.add_trace(trace);
