@@ -6,6 +6,6 @@ edition = "2021"
 [dependencies]
 yew = { version="0.21.0", features = ["csr"]}
 yew-plotly = "0.3.0"
-wasm-bindgen = "0.2.92"
+wasm-bindgen = "0.2.93"
 chrono = "0.4.38"
-mathlab = "0.6.0"
+mathlab = "0.6.1"
