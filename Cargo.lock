@@ -910,7 +910,7 @@ checksum = "85b24f0993c3add8bb13864cf09229ea00d71d135cbc1480f9676ad5f882b712"
 
 [[package]]
 name = "mathlab-yew"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "chrono",
  "mathlab",
