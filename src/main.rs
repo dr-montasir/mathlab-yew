@@ -14,20 +14,30 @@ pub fn get_year() -> String {
 
 #[function_component]
 fn App() -> Html {
+    // tables
     let range_asc = math::range(-30.0, 15.0, 28 + 1, "asc");
     let range_desc = math::range(390.0, 15.0, 28 + 1, "desc");
 
+    // plots
     let mut plot = Plot::new();
 
-    let x_values: Vec<f64> = range_asc.clone();
-    let y_values = math::sin_deg_vec(&x_values);
+    let x_values: Vec<f64> = math::range(0.0, 1.0, 360 + 1, "asc");
+    let y_tan_values = math::tan_deg_vec(&x_values);
+    let y_cot_values = math::cot_deg_vec(&x_values);
 
-    let trace = Scatter::new(x_values, y_values)
+    let tan_trace = Scatter::new(x_values.clone(), y_tan_values)
         .mode(Mode::LinesMarkersText)
-        .name("sin(x°)")
+        .name("tan(x°)")
         .show_legend(true);
 
-    plot.add_trace(trace);
+    plot.add_trace(tan_trace);
+
+    let cot_trace = Scatter::new(x_values, y_cot_values)
+        .mode(Mode::LinesMarkersText)
+        .name("cot(x°)")
+        .show_legend(true);
+
+    plot.add_trace(cot_trace);
 
     html! {
         <div>
@@ -83,7 +93,7 @@ fn App() -> Html {
                     })}
                     </tbody>
                     </table>
-                    <Plotly plot={plot}/>
+                    <Plotly plot={plot} />
                     <div class="w-full px-4 pt-5 mx-auto mb-8 "></div>
                 </div>
             </div>
