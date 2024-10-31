@@ -907,9 +907,9 @@ checksum = "a7a70ba024b9dc04c27ea2f0c0548feb474ec5c54bba33a7f72f873a39d07b24"
 
 [[package]]
 name = "mathlab"
-version = "1.0.0"
+version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f8f400523491cf1821d5bab1d2a3660aab9802e2776ee1cc62b41c065e25e066"
+checksum = "9c2fa2c9c8e48b399deb94a1a7bf105bdaa90d775389f97a9a8e398d2dbb9217"
 
 [[package]]
 name = "mathlab-yew"
